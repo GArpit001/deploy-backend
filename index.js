@@ -1,19 +1,24 @@
-import express from "express"
-import mongoose from "mongoose"
+import express from "express";
+import mongoose from "mongoose";
 
-const app = express()
+const app = express();
 
-let conn =  await mongoose.createConnection("mongodb://127.0.0.1:27017")
+try {
+  let conn = await mongoose.createConnection("mongodb://127.0.0.1:27017");
+} catch (error) {
+  console.log("Not Connect");
+}
 
+app.get("/", (req, res) => {
+  res.send("Hello Express!");
+});
 
+app.post("/apis", (req, res) => {
+  res.send("Hello Post by /apis");
+});
 
-app.get("/" , (req,res)=>{
-    res.send("Hello Express!")
-})
+let Port = 10000 || 4000;
 
-let Port = 10000 ||  4000
-
-
-app.listen(Port , ()=>{
-    console.log("Your Server has been started at Port " + Port)
-})
+app.listen(Port, () => {
+  console.log("Your Server has been started at Port " + Port);
+});
