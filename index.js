@@ -4,7 +4,7 @@ import mongoose from "mongoose"
 const app = express()
 
 try{
-    const conn = await mongoose.connect('mongodb://localhost:27017/deployServer')
+    const conn = await mongoose.connect(`mongodb://${process.env.URL}`)
     console.log("Your server has been successfully connect your DataBase")
 }catch(err){
     console.log("Failed! not connect mongodb " + err.message)
@@ -14,7 +14,7 @@ app.get("/" , (req,res)=>{
     res.send("Hello Express!")
 })
 
-let Port = process.env.PORT ||  4000
+let Port = 4300 || 4000
 
 
 app.listen(Port , ()=>{
