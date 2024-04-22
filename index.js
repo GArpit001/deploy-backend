@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const app = express();
 
 try {
-  let conn =  mongoose.connect("mongodb+srv://arpit:Arpit@2003@cluster0.qvmmxj6.mongodb.net/");
+  let conn =  mongoose.connect("mongodb+srv://arpit:<password>@cluster0.qvmmxj6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 } catch (error) {
   console.log("Not Connect");
 }
