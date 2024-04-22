@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import 'dotenv/config'
 
 const app = express();
 
@@ -26,7 +27,7 @@ app.post("/apis", (req, res) => {
   res.send("Hello Post by /apis");
 });
 
-let Port = 10000 || 4000;
+let Port = process.env.PORT || 4000;
 
 app.listen(Port, () => {
   console.log("Your Server has been started at Port " + Port);
