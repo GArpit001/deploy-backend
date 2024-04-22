@@ -1,7 +1,10 @@
 import express from "express";
 import mongoose from "mongoose";
+import dotenv from "dotenv"
 
 const app = express();
+
+dotenv.config()
 
 try {
 // //   let conn = await mongoose.connect("mongodb+srv://arpit:Arpit@2003@cluster0.qvmmxj6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
@@ -26,7 +29,7 @@ app.post("/apis", (req, res) => {
   res.send("Hello Post by /apis");
 });
 
-let Port = 10000 || 4000;
+let Port = process.env.PORT || 4000;
 
 app.listen(Port, () => {
   console.log("Your Server has been started at Port " + Port);
