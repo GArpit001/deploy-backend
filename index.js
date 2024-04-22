@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const app = express();
 
 try {
-  let conn = await mongoose.createConnection("mongodb://127.0.0.1:27017");
+  let conn =  mongoose.createConnection("mongodb://127.0.0.1:27017");
 } catch (error) {
   console.log("Not Connect");
 }
