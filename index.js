@@ -1,6 +1,9 @@
 import express from "express"
+import mongoose from "mongoose"
 
 const app = express()
+
+let conn =  await mongoose.connect("mongodb://localhost:27017")
 
 
 
