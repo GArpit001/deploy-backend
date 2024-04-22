@@ -1,6 +1,5 @@
 import express from "express"
 import mongoose from "mongoose"
-import { deployServer } from "./models/mongoose.js";
 
 
 const app = express()
