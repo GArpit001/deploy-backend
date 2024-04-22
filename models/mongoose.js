@@ -9,4 +9,4 @@ const backend = new mongoose.Schema({
   
   
   
-  export const deployServer = mongoose.model("deploy", backend)
+  export const innerdeployServer = mongoose.model("deploy", backend)
