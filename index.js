@@ -6,9 +6,9 @@ app.get("/" , (req,res)=>{
     res.send("Hello Express!")
 })
 
-let PORT = 4000
+let Port = process.env.PORT ||  4000
 
 
-app.listen(PORT , ()=>{
-    console.log("Your Server has been started at Port " + PORT)
+app.listen(Port , ()=>{
+    console.log("Your Server has been started at Port " + Port)
 })
